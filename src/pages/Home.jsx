@@ -1,24 +1,15 @@
-import React, { Suspense, useState } from 'react';
+import React from 'react'
 import { Canvas } from '@react-three/fiber';
 import { Cylinder, OrbitControls } from '@react-three/drei';
 import './App.css'
 import { Model } from './components/Model';
 import Cylinder3d from './components/Cylinder3d';
-import Stack from './pages/Stack';
 
-
-function App() {
-  const [count, setCount] = useState(0)
-   const[wire, setWire] = useState(false)
-   const[stack, setStack] = useState(false)
-
+function Home() {
   return (
-   <div>
-      <div>
-      <button onClick={()=>setWire(!wire)}> Test cylinder</button>
-      <button onClick={()=>setStack(!stack)}> Test stack</button>
-      </div>
-      {stack && <div className="avatar">
+    <div>
+      <button onClick={()=>setWire(!wire)}> Test</button>
+      <div className="avatar">
          <Canvas
          camera={{ position: [2, 0, 12.25], fov: 15 }}
          style={{
@@ -37,11 +28,9 @@ function App() {
          </Suspense>
          <OrbitControls />
       </Canvas>
-         </div>}
-   {!stack && <Stack/>}
-
+         </div>
     </div>
   )
-} 
+}
 
-export default App
+export default Home

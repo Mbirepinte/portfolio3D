@@ -9,9 +9,6 @@ export function Model(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF('/model.glb');
 
-
-
-  
   return (
     <group {...props} dispose={null}>
       <primitive object={nodes.Hips} />
